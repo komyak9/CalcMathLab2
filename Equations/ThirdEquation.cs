@@ -8,6 +8,8 @@ namespace Lab_2
 {
     public class ThirdEquation : Equation
     {
+        public ThirdEquation() : base(4) => equationPartsForPrint = new string[] { " * (cos(x))^2 + ", " * tg(x) + ", " * (sin(x))^2 + ", " = 0" };
+
         public override double CalculateValue(double value) => coefficient[0] * Math.Pow(Math.Cos(value * Math.PI / 180), 2) + coefficient[1] * Math.Tan(value * Math.PI / 180) + coefficient[2] * Math.Pow(Math.Sin(value * Math.PI / 180), 2) + coefficient[3];
 
         public override double CalculateFirstDerivative(double value) => (coefficient[0] * (-2) + coefficient[2] * 2) * Math.Sin(value * Math.PI / 180) * Math.Cos(value * Math.PI / 180) + coefficient[1] / Math.Pow(Math.Cos(value * Math.PI / 180), 2);

@@ -8,6 +8,8 @@ namespace Lab_2
 {
     public class SecondEquation : Equation
     {
+        public SecondEquation() : base(3) => equationPartsForPrint = new string[] { " * x + ", " * lg(x) + ", " * x^2 = 0" };
+
         public override double CalculateValue(double value) => coefficient[0] * value + coefficient[1] * Math.Log(value, 10) + coefficient[2] * Math.Pow(value, 2);
 
         public override double CalculateFirstDerivative(double value) => coefficient[0] + coefficient[1] / (value * Math.Log(10)) + coefficient[2] * 2 * value;
