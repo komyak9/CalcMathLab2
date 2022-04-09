@@ -366,3 +366,4 @@ bin
 obj
 *.suo
 *.user
+*.zip
