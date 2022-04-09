@@ -43,14 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Equations\Tools\CoefficientReader.cs" />
+    <Compile Include="Equations\EquationThree.cs" />
     <Compile Include="Equations\Equation.cs" />
-    <Compile Include="Equations\FirstEquation.cs" />
-    <Compile Include="Equations\SecondEquation.cs" />
-    <Compile Include="Equations\ThirdEquation.cs" />
-    <Compile Include="Equations\Tools\EquationPrinter.cs" />
+    <Compile Include="Equations\EquationOne.cs" />
+    <Compile Include="Equations\EquationTwo.cs" />
+    <Compile Include="Strategies\NonLinearCalculatorStrategy.cs" />
+    <Compile Include="Picker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strategies\SingleEquationCalculator.cs" />
+    <Compile Include="Strategies\SystemEquationCalculator.cs" />
+    <Compile Include="Systems\System.cs" />
+    <Compile Include="Systems\SystemOne.cs" />
+    <Compile Include="Systems\SystemTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

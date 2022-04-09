@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab_2
 {
@@ -10,12 +6,43 @@ namespace Lab_2
     {
         static void Main(string[] args)
         {
+            NonLinearCalculatorStrategy strategy = null;
+            Picker picker = new Picker();
 
+            while (true)
+            {
+                try
+                {
+                    switch (picker.PickMode())
+                    {
+                        case 1:
+                            strategy = new SingleEquationCalculator(picker.PickEquation(), picker.PickA(), picker.PickB(), picker.PickAccuracy());
+                            break;
+                        case 2:
+                            strategy = new SystemEquationCalculator(picker.PickSystem(), picker.PickA(), picker.PickB(), picker.PickAccuracy());
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
+
+                try
+                {
+                    strategy.Calculation();
+                    strategy.PrintRoots();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    continue;
+                }
+
+                Console.WriteLine("\nWanna continue? yes/no");
+                if (Console.ReadLine() != "yes") break;
+            }
         }
     }
 }
-
-
-// 2аб
-//Система нелинейных уравнений - метод простых итераций
-//Решение нелинейных уравнений - метод деления пополам, метод хорд
